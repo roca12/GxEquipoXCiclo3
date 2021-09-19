@@ -1,0 +1,27 @@
+
+
+.login{
+  padding: 2em;
+  border-radius: 10px;
+  background-color: black;
+
+}
+
+
+.titulologin{
+  color: whitesmoke;
+  font-size: 40px;
+}
+
+.links{
+  transition: 0.5 all;
+}
+.links:hover{
+  font-weight: bolder;
+  transition: 0.5 all;
+}
+
+.tablax{
+	background-color: white;
+}
+
