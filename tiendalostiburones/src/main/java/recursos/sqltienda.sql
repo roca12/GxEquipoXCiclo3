@@ -19,24 +19,18 @@ INSERT INTO usuarios VALUES(003,'roca230313@gmail.com','Diego Rodriguez','pass2'
 CREATE UNIQUE INDEX usuario_unico 
 ON usuarios(usuario);
 
+######## modulo de clientes ########
+CREATE TABLE clientes (
+    cedula_cliente BIGINT PRIMARY KEY,
+    direccion_cliente VARCHAR(255) NOT NULL,
+    email_cliente VARCHAR(255) NOT NULL,
+    nombre_cliente VARCHAR(255) NOT NULL,
+    telefono_cliente VARCHAR(255) NOT NULL
+);
+
+INSERT INTO clientes VALUES(001,'Calle falsa 123','roca@gmail.com','Diego Rodriguez','3000000000');
 
 
-DROP TABLE usuarios;
 
-DELETE FROM usuarios 
-WHERE
-    cedula_usuario = 001;
 
-UPDATE usuarios 
-SET 
-    email_usuario = '',
-    nombre_usuario = '',
-    password = '',
-    usuario = ''
-WHERE
-    cedula_usuario = 002;
 
-SELECT 
-    *
-FROM
-    usuarios;

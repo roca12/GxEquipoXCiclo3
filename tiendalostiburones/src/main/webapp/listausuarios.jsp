@@ -108,13 +108,13 @@
 				<div class="row">
 					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
 					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
-					<button type="button" class="btn btn-danger">
+					<button type="button" class="btn btn-danger" onclick="window.location.href='/eliminarusuario.jsp'">
 					<i class="fas fa-trash"></i> Eliminar usuario</button>
-					<button type="button" class="btn btn-warning">
+					<button type="button" class="btn btn-warning" onclick="window.location.href='/actualizarusuario.jsp'">
 					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary" onclick="window.location.href='/buscarusuario.jsp'">
 					<i class="fas fa-search"></i> Buscar un usuario</button>
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary" onclick="window.location.href='/listausuarios.jsp'">
 					<i class="fas fa-search"></i> Listar todos los usuarios</button>
 				</div>
 			</div>

@@ -55,7 +55,8 @@
 
 			<div class="input-group mb-3">
 				<span class="input-group-text" id="basic-addon1"><i
-					class="fas fa-key"></i> </span> <input id="inputpass" type="password"
+					class="fas fa-key"></i> </span> 
+					<input id="inputpass" type="password"
 					class="form-control" placeholder="Password" aria-label="Password"
 					aria-describedby="basic-addon1">
 			</div>
