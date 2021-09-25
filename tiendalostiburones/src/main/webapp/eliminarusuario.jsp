@@ -68,7 +68,7 @@
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al eliminar el usuario, verifique que no
+				role="alert">Error al eliminar el usuario, verifique que 
 				exista un usuario con la cedula y usuario dados</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
