@@ -190,10 +190,10 @@
 			if (usuario.toString()!=""){
 
 				document.getElementById("cedula_usuario").value = usuario[0].cedula_usuario;
-				document.getElementById("email_usuario").value = usuario[0].cedula_usuario;
-				document.getElementById("nombre_usuario").value = usuario[0].cedula_usuario;
-				document.getElementById("password").value = usuario[0].cedula_usuario;
-				document.getElementById("user").value = usuario[0].cedula_usuario;
+				document.getElementById("email_usuario").value = usuario[0].email_usuario;
+				document.getElementById("nombre_usuario").value = usuario[0].nombre_usuario;
+				document.getElementById("password").value = usuario[0].password;
+				document.getElementById("user").value = usuario[0].usuario;
 				
 				document.getElementById("usersearch").value = "";
 			

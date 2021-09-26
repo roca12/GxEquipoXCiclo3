@@ -148,7 +148,7 @@
 				console.log(usuarios[i].cedula_usuario);
 				if (usuarios[i].cedula_usuario == y) {
 					console.log(usuarios[i].cedula_usuario + " " + y);
-					coincidencia = true
+					coincidencia = true;
 					break;
 				}
 			}
