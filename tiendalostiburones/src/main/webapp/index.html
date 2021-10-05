@@ -17,7 +17,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
 </head>
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed sb-sidenav-toggled">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="index.html"><i
@@ -33,332 +33,116 @@
 
 		</form>
 	</nav>
-	<div id="layoutSidenav">
-		<div id="layoutSidenav_nav">
-			<nav class="sb-sidenav accordion sb-sidenav-dark"
-				id="sidenavAccordion">
-				<div class="sb-sidenav-menu">
-					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Modulos</div>
-						
-						<!-- menu usuarios -->
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages" aria-expanded="false"
-							aria-controls="collapsePages">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-users"></i>
-							</div> Usuarios
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth" aria-expanded="false"
-									aria-controls="pagesCollapseAuth"> Operaciones
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="listausuarios.jsp"><i class="fas fa-list-ol m-1"></i>Listar</a> 
-										<a class="nav-link" href="insertarusuario.jsp"><i class="far fa-plus-square m-1"></i>Registrar</a> 
-										<a class="nav-link" href="eliminarusuario.jsp"><i class="fas fa-trash-alt m-1"></i>Eliminar</a>
-										<a class="nav-link" href="actualizarusuario.jsp"><i class="fas fa-sync-alt m-1"></i>Actualizar</a>
-										<a class="nav-link" href="buscarusuario.jsp"><i class="fas fa-search m-1"></i>Buscar</a>
-									</nav>
-								</div>
-							</nav>	
-						</div>
-						<!-- --------------------------------- -->
-						<!-- menu clientes -->
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages2" aria-expanded="false"
-							aria-controls="collapsePages2">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-people-arrows"></i>
-							</div> Clientes
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages2"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion2">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth2" aria-expanded="false"
-									aria-controls="pagesCollapseAuth2"> Operaciones
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth2"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="listausuarios.jsp"><i class="fas fa-list-ol m-1"></i>Listar</a> 
-										<a class="nav-link" href="insertarusuario.jsp"><i class="far fa-plus-square m-1"></i>Registrar</a> 
-										<a class="nav-link" href="eliminarusuario.jsp"><i class="fas fa-trash-alt m-1"></i>Eliminar</a>
-										<a class="nav-link" href="actualizarusuario.jsp"><i class="fas fa-sync-alt m-1"></i>Actualizar</a>
-										<a class="nav-link" href="buscarusuario.jsp"><i class="fas fa-search m-1"></i>Buscar</a>
-									</nav>
-								</div>
-							</nav>	
-						</div>
-						<!-- --------------------------------- -->
-						<!-- menu proveedores -->
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages3" aria-expanded="false"
-							aria-controls="collapsePages3">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-truck"></i>
-							</div> Proveedores
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages3"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion3">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages3">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth3" aria-expanded="false"
-									aria-controls="pagesCollapseAuth3"> Operaciones
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth3"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="listausuarios.jsp"><i class="fas fa-list-ol m-1"></i>Listar</a> 
-										<a class="nav-link" href="insertarusuario.jsp"><i class="far fa-plus-square m-1"></i>Registrar</a> 
-										<a class="nav-link" href="eliminarusuario.jsp"><i class="fas fa-trash-alt m-1"></i>Eliminar</a>
-										<a class="nav-link" href="actualizarusuario.jsp"><i class="fas fa-sync-alt m-1"></i>Actualizar</a>
-										<a class="nav-link" href="buscarusuario.jsp"><i class="fas fa-search m-1"></i>Buscar</a>
-									</nav>
-								</div>
-							</nav>	
-						</div>
-						<!-- --------------------------------- -->
-						<!-- menu productos -->
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages4" aria-expanded="false"
-							aria-controls="collapsePages4">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-apple-alt"></i>
-							</div> Productos
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages4"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion4">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages4">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth4" aria-expanded="false"
-									aria-controls="pagesCollapseAuth4"> Operaciones
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth4"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="listausuarios.jsp"><i class="fas fa-list-ol m-1"></i>Listar</a> 
-										<a class="nav-link" href="insertarproducto.jsp"><i class="far fa-plus-square m-1"></i>Registrar</a> 
-									</nav>
-								</div>
-							</nav>	
-						</div>
-						<!-- --------------------------------- -->
-						<!-- menu ventas -->
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages5" aria-expanded="false"
-							aria-controls="collapsePages5">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-dollar-sign"></i>
-							</div> Ventas
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages5"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion5">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages5">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth5" aria-expanded="false"
-									aria-controls="pagesCollapseAuth5"> Operaciones
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth5"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="listausuarios.jsp"><i class="fas fa-list-ol m-1"></i>Listar</a> 
-										<a class="nav-link" href="insertarusuario.jsp"><i class="far fa-plus-square m-1"></i>Registrar</a> 
-									</nav>
-								</div>
-							</nav>	
-						</div>
-						<!-- --------------------------------- -->
-						<!-- menu productos -->
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages6" aria-expanded="false"
-							aria-controls="collapsePages6">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-file-export"></i>
-							</div> Reportes
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages6"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion6">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages6">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth6" aria-expanded="false"
-									aria-controls="pagesCollapseAuth6"> Operaciones
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth6"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="listausuarios.jsp"><i class="fas fa-list-ol m-1"></i>Crear Reporte</a>  
-									</nav>
-								</div>
-							</nav>	
-						</div>
-						<!-- --------------------------------- -->
-					</div>
-				</div>
-				<div class="sb-sidenav-footer">
-					<div class="small">Misión TIC 2022</div>
-					Grupos 9, 38 y 53
-				</div>
-			</nav>
-		</div>
-		
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4">
-					<h1 class="mt-4">Bienvenidos a la tienda los tiburones</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">Spring Boot + Java 11 +
-							MySql/MariaDB + Bootstrap5</li>
-					</ol>
-					<div class="row">
-						<div class="col-xl-6 col-md-6">
-							<div class="card bg-primary text-white mb-4">
-								<div class="card-body">
-									<i class="fas fa-sign-in-alt"></i> Iniciar sesión
-								</div>
-								<div
-									class="card-footer d-flex align-items-center justify-content-between">
-									<a class="small text-white stretched-link" href="login.html">Ir
-										a la pagina </a>
-									<div class="small text-white">
-										<i class="fas fa-angle-right"></i>
-									</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="col-xl-6 col-md-6">
-							<div class="card bg-success text-white mb-4">
-								<div class="card-body">
-									<i class="fab fa-css3-alt"></i> Ver archivo CSS
+	<div id="layoutSidenav_content">
+		<main>
+
+			<div w3-include-html="/snippets/sidenav.html"></div>
+			<div class="container-fluid px-4">
+				<h1 class="mt-4">Bienvenidos a la tienda los tiburones</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item active">Spring Boot + Java 11 +
+						MySql/MariaDB + Bootstrap5</li>
+				</ol>
+				<div class="row">
+					<div class="col-xl-6 col-md-6">
+						<div class="card bg-primary text-white mb-4">
+							<div class="card-body">
+								<i class="fas fa-sign-in-alt"></i> Iniciar sesión
+							</div>
+							<div
+								class="card-footer d-flex align-items-center justify-content-between">
+								<a class="small text-white stretched-link" href="login.html">Ir
+									a la pagina </a>
+								<div class="small text-white">
+									<i class="fas fa-angle-right"></i>
 								</div>
-								<div
-									class="card-footer d-flex align-items-center justify-content-between">
-									<a class="small text-white stretched-link"
-										href="css/styles.css">Ir al archivo</a>
-									<div class="small text-white">
-										<i class="fas fa-angle-right"></i>
-									</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-6 col-md-6">
+						<div class="card bg-success text-white mb-4">
+							<div class="card-body">
+								<i class="fab fa-css3-alt"></i> Ver archivo CSS
+							</div>
+							<div
+								class="card-footer d-flex align-items-center justify-content-between">
+								<a class="small text-white stretched-link" href="css/styles.css">Ir
+									al archivo</a>
+								<div class="small text-white">
+									<i class="fas fa-angle-right"></i>
 								</div>
 							</div>
 						</div>
 					</div>
 					
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="card mb-4">
-								<div class="card-header text-white bg-dark">
-									<i class="fas fa-chart-bar me-1"></i> Video Los tiburones
+					<div class="col-xl-12 col-md-12">
+						<div class="card bg-danger text-white mb-4">
+							<div class="card-body">
+								<i class="fas fa-project-diagram"></i> Ver documentación SWAGGER
+							</div>
+							<div
+								class="card-footer d-flex align-items-center justify-content-between">
+								<a class="small text-white stretched-link" href="swagger-ui.html">Ir
+									al sitio</a>
+								<div class="small text-white">
+									<i class="fas fa-angle-right"></i>
 								</div>
-								<div class="card-body">
-								
-									<iframe width="700" height="400"   class="rounded mx-auto d-block"
-									src="https://www.youtube-nocookie.com/embed/4HGNqFdaD34" 
-									title="YouTube video player" 
-									frameborder="0" 
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card mb-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-chart-bar me-1"></i> Video Los tiburones
+							</div>
+							<div class="card-body">
+
+								<iframe width="700" height="400" class="rounded mx-auto d-block"
+									src="https://www.youtube-nocookie.com/embed/4HGNqFdaD34"
+									title="YouTube video player" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowfullscreen></iframe>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="card mb-4">
-								<div class="card-header text-white bg-dark">
-									<i class="fas fa-chart-bar me-1"></i> Grafico de estudiantes
-									por grupo
-								</div>
-								<div class="card-body">
-									<canvas id="myBarChart" width="100%" height="20"></canvas>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
-			</main>
-			
-			<footer class="py-4 bg-light mt-auto">
-				<div class="container-fluid px-4">
-					<div
-						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">
-							<i class="fas fa-code"></i> Diseñado y programado por Diego
-							Rodriguez <i class="fas fa-code-branch"></i>
-						</div>
-						<div>
-							<a href="https://github.com/roca12/GxEquipoXCiclo3"><i class="fab fa-github fa-2x"></i></a> &middot; <a
-								href="https://getbootstrap.com/docs/5.0/getting-started/introduction/"><i class="fab fa-bootstrap fa-2x"></i></a> &middot; <a
-								href="https://www.oracle.com/java/technologies/downloads/"><i class="fab fa-java fa-2x"></i></a> &middot; <a
-								href="https://developer.mozilla.org/es/docs/Web/JavaScript"><i class="fab fa-js-square fa-2x"></i></a> &middot; <a
-								href="https://mariadb.org/"><i class="fas fa-database fa-2x"></i></a>
+
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card mb-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-chart-bar me-1"></i> Grafico de estudiantes por
+								grupo
+							</div>
+							<div class="card-body">
+								<canvas id="myBarChart" width="100%" height="20"></canvas>
+							</div>
 						</div>
 					</div>
 				</div>
-			</footer>
-		</div>
+			</div>
+
+		</main>
+
+		<div w3-include-html="/snippets/footer.html"></div>
+
 	</div>
-	
+
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
+
+	<script>
+		includeHTML();
+	</script>
+	
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>

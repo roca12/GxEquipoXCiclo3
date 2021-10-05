@@ -11315,7 +11315,7 @@ body {
   flex-shrink: 0;
   transition: transform 0.15s ease-in-out;
   z-index: 1038;
-  transform: translateX(-225px);
+  transform: translateX(0);
 }
 #layoutSidenav #layoutSidenav_content {
   position: relative;
@@ -11329,8 +11329,8 @@ body {
 }
 
 .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
-  transform: translateX(0);
-}
+    transform: translateX(-225px);
+  }
 .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
   content: "";
   display: block;
@@ -11693,3 +11693,14 @@ body {
 	background-size: cover;
 	
 }
+
+
+
+input:invalid:required {
+  box-shadow: 0 0 5px 1px red;
+}
+
+
+
+
+

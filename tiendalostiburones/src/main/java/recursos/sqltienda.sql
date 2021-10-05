@@ -13,8 +13,19 @@ CREATE TABLE usuarios (
 ); 
 
 INSERT INTO usuarios VALUES(001,'roca230313@gmail.com','Diego Rodriguez','admin123456','admininicial');
-INSERT INTO usuarios VALUES(002,'roca230313@gmail.com','Diego Rodriguez','pass','user');
+INSERT INTO usuarios VALUES(002,'roca230313@.gmail.com','Diego Rodriguez','pass','user');
 INSERT INTO usuarios VALUES(003,'roca230313@gmail.com','Diego Rodriguez','pass2','user2');
+INSERT INTO usuarios VALUES(004,'a','a','a','a');
+INSERT INTO usuarios VALUES(005,'a','a','a','a2');
+INSERT INTO usuarios VALUES(006,'a','a','a','a3');
+INSERT INTO usuarios VALUES(007,'a','a','a','a4');
+INSERT INTO usuarios VALUES(008,'a','a','a','a5');
+INSERT INTO usuarios VALUES(009,'a','a','a','a6');
+INSERT INTO usuarios VALUES(010,'a','a','a','a7');
+INSERT INTO usuarios VALUES(011,'a','a','a','a8');
+INSERT INTO usuarios VALUES(012,'a','a','a','a9');
+INSERT INTO usuarios VALUES(013,'a','a','a','a10');
+
 
 CREATE UNIQUE INDEX usuario_unico 
 ON usuarios(usuario);
