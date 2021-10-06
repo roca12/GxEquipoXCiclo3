@@ -70,6 +70,32 @@ CREATE TABLE productos (
 
 INSERT INTO productos VALUES(201,0.19,1,'Leche Entera',2000.0,3000.0);
 
+######## modulo de ventas ########
+create table ventas(
+codigo_venta bigint primary key auto_increment,
+cedula_cliente bigint,
+cedula_usuario bigint,
+ivaventa double,
+total_venta double,
+valor_venta double,
+FOREIGN KEY (cedula_cliente) REFERENCES clientes(cedula_cliente)
+);
 
+ALTER TABLE ventas
+ADD FOREIGN KEY (cedula_usuario) REFERENCES usuarios(cedula_usuario);
+
+create table detalle_ventas(
+codigo_detalle_venta bigint primary key auto_increment,
+cantidad_producto int,
+codigo_producto bigint,
+codigo_venta bigint,
+valor_total double,
+valor_venta double,
+valoriva double,
+FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto)
+);
+
+ALTER TABLE detalle_ventas
+ADD FOREIGN KEY (codigo_venta) REFERENCES ventas(codigo_venta)
 
 

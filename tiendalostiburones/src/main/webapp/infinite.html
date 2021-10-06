@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Infinite: Useful CSS Animations</title>
+<link href="css/infinite.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<h1>
+			∞
+			<div class="sub header">Useful infinite CSS animations that you
+				can drop into your project.</div>
+		</h1>
+
+
+
+		<div class="examples">
+			<h2>
+				<code>pulsate</code>
+			</h2>
+			<p>
+				This will generate a pulsating item that changes
+				<code>opacity</code>
+				and
+				<code>scale</code>
+				. I normally use it for loading indicators.
+			</p>
+			<div class="example-item pulsate-css"></div>
+
+			<pre>
+				<code>
+.pulsate-css {
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 0.0;
+
+    /* you dont need the stuff below, but its what I used to create the loading circle */
+    border: 3px solid #999;
+    border-radius: 30px;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+}
+            </code>
+			</pre>
+
+
+			<h2>
+				<code>opacityPulse</code>
+			</h2>
+			<p>This will generate an opacity pulse. Useful for muted text
+				items.</p>
+			<div class="example-item opacityPulse-css">
+				<p>Here is some text that will be pulsating.</p>
+			</div>
+
+			<pre>
+				<code>
+.opacityPulse-css {
+    animation: opacityPulse 2s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 1;
+}
+            </code>
+			</pre>
+
+
+
+			<h2>
+				<code>alertPulse</code>
+			</h2>
+			<p>This will generate a background-color pulse. Since it is red,
+				I call it an alert pulse.</p>
+			<div class="example-item alertPulse-css">
+				<p>Something is wrong.</p>
+			</div>
+
+			<pre>
+				<code>
+.alertPulse-css {
+    animation: alertPulse 2s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 1;
+    background: #9A2727; /* you need this to specify a color to pulse to */
+}
+            </code>
+			</pre>
+
+
+
+			<h2>
+				<code>rotating</code>
+			</h2>
+			<p>
+				This will generate an infinitely rotating item. The speed is
+				dependent on the animation duration (
+				<code>2s</code>
+				for this example).
+			</p>
+			<div class="example-item">
+				<img src="assets/fan.png" width="48" height="auto"
+					class="rotating-css" />
+			</div>
+
+			<pre>
+				<code>
+.rotating-css {
+    animation: rotating 2s linear;
+    animation-iteration-count: infinite;
+}
+            </code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -19,6 +19,8 @@
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
 <link href="css/styles.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 
@@ -43,45 +45,57 @@
 
 		<div id="layoutSidenav_content">
 			<main>
-				<div class="container-fluid px-4">
+				<div class="container-fluid px-4 animate__animated animate__bounceInLeft">
 					<h1 class="mt-4">Eliminar usuario</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item active">Permite eliminar un usuario existente</li>
 					</ol>
 					<div class="row">
-						<div class="col-xl-12 col-md-12">
-							<div class="card  text-black mb-4">
+					<div class="col-xl-12 col-md-12">
+						<div class="card  text-black mb-4">
 
-								<div class="container">
-									<div class="row">
-										<h1>
-											<i class="fas fa-cogs"></i> Operaciones
-										</h1>
+							<div class="container">
+
+								<h1>
+									<i class="fas fa-cogs"></i> Operaciones
+								</h1>
+								<div class="row">
+									<div class="col-sm-2 col-md-2 me-2">
+
 										<button type="button" class="btn btn-success"
 											onclick="window.location.href='/insertarusuario.jsp'">
 											<i class="fas fa-plus-circle"></i> Agregar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
 											onclick="window.location.href='/eliminarusuario.jsp'">
 											<i class="fas fa-trash"></i> Eliminar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
 											onclick="window.location.href='/actualizarusuario.jsp'">
 											<i class="fas fa-pen-alt"></i> Actualizar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
 											onclick="window.location.href='/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar un usuario
+											<i class="fas fa-search"></i> Buscar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
 											onclick="window.location.href='/listausuarios.jsp'">
-											<i class="fas fa-search"></i> Listar todos los usuarios
+											<i class="fas fa-search"></i> Listado completa
 										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
 					<div class="row">
 						<div class="col-xl-12">

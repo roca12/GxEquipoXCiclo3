@@ -61,6 +61,8 @@
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
 <link href="css/styles.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 <body class="sb-nav-fixed sb-sidenav-toggled">
@@ -79,100 +81,113 @@
 
 		</form>
 	</nav>
-	
+
 	<div w3-include-html="/snippets/sidenav.html"></div>
 
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4">
-					<h1 class="mt-4">Lista de usuarios</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">Muestra una tabla
-							conteniendo todos los usuarios registrados en el sistema</li>
-					</ol>
-					<div class="row">
-						<div class="col-xl-12 col-md-12">
-							<div class="card  text-black mb-4">
+	<div id="layoutSidenav_content">
+		<main>
+			<div
+				class="container-fluid px-4 animate__animated animate__bounceInLeft">
+				<h1 class="mt-4">Lista de usuarios</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item active">Muestra una tabla
+						conteniendo todos los usuarios registrados en el sistema</li>
+				</ol>
+				<div class="row">
+					<div class="col-xl-12 col-md-12">
+						<div class="card  text-black mb-4">
 
-								<div class="container">
-									<div class="row">
-										<h1>
-											<i class="fas fa-cogs"></i> Operaciones
-										</h1>
+							<div class="container">
+
+								<h1>
+									<i class="fas fa-cogs"></i> Operaciones
+								</h1>
+								<div class="row">
+									<div class="col-sm-2 col-md-2 me-2">
+
 										<button type="button" class="btn btn-success"
 											onclick="window.location.href='/insertarusuario.jsp'">
 											<i class="fas fa-plus-circle"></i> Agregar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
 											onclick="window.location.href='/eliminarusuario.jsp'">
 											<i class="fas fa-trash"></i> Eliminar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
 											onclick="window.location.href='/actualizarusuario.jsp'">
 											<i class="fas fa-pen-alt"></i> Actualizar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
 											onclick="window.location.href='/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar un usuario
+											<i class="fas fa-search"></i> Buscar usuario
 										</button>
+									</div>
+									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
 											onclick="window.location.href='/listausuarios.jsp'">
-											<i class="fas fa-search"></i> Listar todos los usuarios
+											<i class="fas fa-search"></i> Listado completa
 										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="card mb-4">
-								<div class="card-header text-white bg-dark">
-									<i class="fas fa-table"></i> Tabla de usuarios
-								</div>
-								<div class="card-body">
-									<table id="datatablesuers">
-										<thead>
-											<tr>
-												<th>Cedula</th>
-												<th>Email</th>
-												<th>Nombre</th>
-												<th>Password</th>
-												<th>Usuario</th>
-											</tr>
-										</thead>
-										<tfoot>
-											<tr>
-												<th>Cedula</th>
-												<th>Email</th>
-												<th>Nombre</th>
-												<th>Password</th>
-												<th>Usuario</th>
-											</tr>
-										</tfoot>
-										<tbody id="usuariosinfo">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card mb-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-table"></i> Tabla de usuarios
+							</div>
+							<div class="card-body">
+								<table id="datatablesuers">
+									<thead>
+										<tr>
+											<th>Cedula</th>
+											<th>Email</th>
+											<th>Nombre</th>
+											<th>Password</th>
+											<th>Usuario</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th>Cedula</th>
+											<th>Email</th>
+											<th>Nombre</th>
+											<th>Password</th>
+											<th>Usuario</th>
+										</tr>
+									</tfoot>
+									<tbody id="usuariosinfo">
 
-										</tbody>
-									</table>
-								</div>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 
-			</main>
+		</main>
 
-			<div w3-include-html="/snippets/footer.html"></div>
-			
-		</div>
+		<div w3-include-html="/snippets/footer.html"></div>
+
+	</div>
 	</div>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	
+
 	<script>
 		includeHTML();
 	</script>
