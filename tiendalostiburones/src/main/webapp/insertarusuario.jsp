@@ -89,7 +89,7 @@
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
 											onclick="window.location.href='/listausuarios.jsp'">
-											<i class="fas fa-search"></i> Listado completa
+											<i class="fas fa-search"></i> Listado completo
 										</button>
 									</div>
 								</div>

@@ -11700,7 +11700,15 @@ input:invalid:required {
   box-shadow: 0 0 5px 1px red;
 }
 
-
-
+@font-face {
+  font-family: Ubuntu;
+  src: url(Ubuntu-Bold.ttf);
+}
+body {
+  font-family: Ubuntu;
+}
+#sidebarToggle{
+	margin-left: 20px
+}
 
 
