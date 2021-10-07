@@ -41,7 +41,7 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="snippets/sidenav.html"></div>
+	<div w3-include-html="/snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
@@ -142,7 +142,7 @@
 			</div>
 		</main>
 
-		<div w3-include-html="snippets/footer.html"></div>
+		<div w3-include-html="/snippets/footer.html"></div>
 
 	</div>
 	</div>
@@ -159,14 +159,13 @@
 		crossorigin="anonymous"></script>
 	<script>
 		function eliminar() {
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+	
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req
-					.open(
-							'GET',
-							'http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/listarusuarios',
-							false);
+			req.open('GET',baseUrl+'/listarusuarios',false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -188,11 +187,7 @@
 				var cedula = document.getElementById("cedula_usuario").value;
 
 				var xhr = new XMLHttpRequest();
-				xhr
-						.open(
-								"DELETE",
-								"http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/eliminarusuario?cedula_usuario="
-										+ cedula);
+				xhr.open("DELETE",baseUrl+"/eliminarusuario?cedula_usuario="+ cedula);
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

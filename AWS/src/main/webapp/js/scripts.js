@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 
+
 function includeHTML() {
 	var z, i, elmnt, file, xhttp;
 	/* Loop through a collection of all HTML elements: */
@@ -26,11 +27,13 @@ function includeHTML() {
 	for (i = 0; i < z.length; i++) {
 		elmnt = z[i];
 		/*search for elements with a certain atrribute:*/
-		file =  elmnt.getAttribute("w3-include-html");
-		
+		file = elmnt.getAttribute("w3-include-html");
+
 		if (file) {
-			//alert(window.location.href+file);
-			file =window.location.href+file;
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			file = baseUrl + file;
+			//alert(baseUrl);
 			/* Make an HTTP request using the attribute value as the file name: */
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {

@@ -16,7 +16,9 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
 <script>
-	
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
 	window.addEventListener('DOMContentLoaded', event => {
 	    // Simple-DataTables
 	    // https://github.com/fiduswriter/Simple-DataTables/wiki
@@ -33,7 +35,7 @@
 	        });
 	    }
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET", "http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/listarusuarios", true);
+			xmlhttp.open("GET", baseUrl+"/listarusuarios", true);
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
@@ -82,7 +84,7 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="snippets/sidenav.html"></div>
+	<div w3-include-html="/snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
@@ -178,7 +180,7 @@
 
 		</main>
 
-		<div w3-include-html="snippets/footer.html"></div>
+		<div w3-include-html="/snippets/footer.html"></div>
 
 	</div>
 	</div>

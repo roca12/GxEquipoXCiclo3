@@ -41,7 +41,7 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="snippets/sidenav.html"></div>
+	<div w3-include-html="/snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
@@ -181,7 +181,7 @@
 			</div>
 		</main>
 
-		<div w3-include-html="snippets/footer.html"></div>
+		<div w3-include-html="/snippets/footer.html"></div>
 	</div>
 	</div>
 
@@ -199,14 +199,14 @@
 	<script>
 		function enviar() {
 
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"
+					+ getUrl.pathname.split('/')[1];
+
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			var user = document.getElementById("usersearch").value;
-			req
-					.open(
-							'GET',
-							'http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/consultarusuario?usuario='
-									+ user, false);
+			req.open('GET',baseUrl+'/consultarusuario?usuario='+ user, false);
 			req.send(null);
 			var usuario = null;
 			if (req.status == 200)

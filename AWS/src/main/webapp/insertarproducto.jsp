@@ -41,7 +41,7 @@
 		</form>
 	</nav>
 	
-	<div w3-include-html="snippets/sidenav.html"></div>
+	<div w3-include-html="/snippets/sidenav.html"></div>
 
 		<div id="layoutSidenav_content">
 			<main>
@@ -98,7 +98,7 @@
 					</div>
 			</main>
 
-			<div w3-include-html="snippets/footer.html"></div>
+			<div w3-include-html="/snippets/footer.html"></div>
 			
 		</div>
 	</div>
@@ -116,6 +116,9 @@
 		crossorigin="anonymous"></script>
 	<script>
 		function subirArchivo() {
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+	
 
 			try {
 
@@ -131,8 +134,7 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",
-							"http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/eliminartodoproducto", true);
+					xhr.open("DELETE",baseUrl+"//eliminartodoproducto", true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
@@ -154,8 +156,7 @@
 						formData.append("iva_compra", arraydatos[4]);
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
-						xhr.open("POST",
-								"http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/registrarproducto");
+						xhr.open("POST",baseUrl+"/registrarproducto");
 
 						xhr.send(formData);
 					}
