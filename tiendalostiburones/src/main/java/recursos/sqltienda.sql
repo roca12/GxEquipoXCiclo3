@@ -96,6 +96,8 @@ FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto)
 );
 
 ALTER TABLE detalle_ventas
-ADD FOREIGN KEY (codigo_venta) REFERENCES ventas(codigo_venta)
+ADD FOREIGN KEY (codigo_venta) REFERENCES ventas(codigo_venta);
+
+select count(*) from usuarios;
 
 
