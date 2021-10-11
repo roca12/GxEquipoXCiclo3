@@ -26,8 +26,11 @@ function includeHTML() {
 	for (i = 0; i < z.length; i++) {
 		elmnt = z[i];
 		/*search for elements with a certain atrribute:*/
-		file = elmnt.getAttribute("w3-include-html");
+		file =  elmnt.getAttribute("w3-include-html");
+		
 		if (file) {
+			//alert(window.location.href+file);
+			file =window.location.href+file;
 			/* Make an HTTP request using the attribute value as the file name: */
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {

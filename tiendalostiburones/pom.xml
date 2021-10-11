@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.roca12.misiontic2022</groupId>
 	<artifactId>tiendalostiburones</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 	<name>Tienda Los tiburones</name>
 	<description>Demo project for Spring Boot</description>

@@ -40,18 +40,19 @@
 
 		</form>
 	</nav>
-	
-	<div w3-include-html="/snippets/sidenav.html"></div>
 
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4 animate__animated animate__bounceInLeft">
-					<h1 class="mt-4">Eliminar usuario</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">Permite eliminar un
-							usuario existente</li>
-					</ol>
-					<div class="row">
+	<div w3-include-html="snippets/sidenav.html"></div>
+
+	<div id="layoutSidenav_content">
+		<main>
+			<div
+				class="container-fluid px-4 animate__animated animate__bounceInLeft">
+				<h1 class="mt-4">Eliminar usuario</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item active">Permite eliminar un usuario
+						existente</li>
+				</ol>
+				<div class="row">
 					<div class="col-xl-12 col-md-12">
 						<div class="card  text-black mb-4">
 
@@ -64,32 +65,32 @@
 									<div class="col-sm-2 col-md-2 me-2">
 
 										<button type="button" class="btn btn-success"
-											onclick="window.location.href='/insertarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
 											<i class="fas fa-plus-circle"></i> Agregar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='/eliminarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
 											<i class="fas fa-trash"></i> Eliminar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='/actualizarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 											<i class="fas fa-pen-alt"></i> Actualizar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='/buscarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
 											<i class="fas fa-search"></i> Buscar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='/listausuarios.jsp'">
-											<i class="fas fa-search"></i> Listado completo
+											onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
+											<i class="fas fa-search"></i> Listado completa
 										</button>
 									</div>
 								</div>
@@ -98,98 +99,97 @@
 					</div>
 				</div>
 
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="card mb-4">
-								<div class="card-header text-white bg-dark">
-									<i class="fas fa-table"></i> Formulario de registro de usuario
-								</div>
-								<div class="card-body">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card mb-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-table"></i> Formulario de registro de usuario
+							</div>
+							<div class="card-body">
 
-									<h1>
-										<i class="fas fa-search m-1"></i>Username del usuario a buscar
-									</h1>
+								<h1>
+									<i class="fas fa-search m-1"></i>Username del usuario a buscar
+								</h1>
+								<div class="container">
+
 									<div class="container">
 
-										<div class="container">
 
+										<div id="error" class="alert alert-danger visually-hidden"
+											role="alert">Error al buscar el usuario, el usuario no
+											existe</div>
 
-											<div id="error" class="alert alert-danger visually-hidden"
-												role="alert">Error al buscar el usuario, el usuario no
-												existe</div>
+										<div id="correcto" class="alert alert-success visually-hidden"
+											role="alert">Usuario encontrado con exito</div>
 
-											<div id="correcto"
-												class="alert alert-success visually-hidden" role="alert">Usuario
-												encontrado con exito</div>
+										<form id="form1">
 
-											<form id="form1">
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="basic-addon4">Usuario
+													a buscar</span> <input type="text" class="form-control"
+													placeholder="Inserte username aqui..."
+													aria-describedby="basic-addon4" required id="usersearch">
+											</div>
+											<br> <br> <br>
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="basic-addon1">Cedula</span>
+												<input type="text" class="form-control"
+													aria-describedby="basic-addon1" required
+													id="cedula_usuario" disabled="disabled">
+											</div>
 
-												<div class="input-group mb-3">
-													<span class="input-group-text" id="basic-addon4">Usuario
-														a buscar</span> <input type="text" class="form-control"
-														placeholder="Inserte username aqui..."
-														aria-describedby="basic-addon4" required id="usersearch">
-												</div>
-												<br> <br> <br>
-												<div class="input-group mb-3">
-													<span class="input-group-text" id="basic-addon1">Cedula</span>
-													<input type="text" class="form-control"
-														aria-describedby="basic-addon1" required
-														id="cedula_usuario" disabled="disabled">
-												</div>
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="basic-addon2">Email</span>
+												<input type="text" class="form-control"
+													aria-describedby="basic-addon2" required id="email_usuario"
+													disabled="disabled">
+											</div>
 
-												<div class="input-group mb-3">
-													<span class="input-group-text" id="basic-addon2">Email</span>
-													<input type="text" class="form-control"
-														aria-describedby="basic-addon2" required
-														id="email_usuario" disabled="disabled">
-												</div>
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="basic-addon3">Nombrecompleto</span>
+												<input type="text" class="form-control"
+													aria-describedby="basic-addon3" required
+													id="nombre_usuario" disabled="disabled">
+											</div>
 
-												<div class="input-group mb-3">
-													<span class="input-group-text" id="basic-addon3">Nombrecompleto</span>
-													<input type="text" class="form-control"
-														aria-describedby="basic-addon3" required
-														id="nombre_usuario" disabled="disabled">
-												</div>
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="basic-addon4">Username</span>
+												<input type="text" class="form-control"
+													aria-describedby="basic-addon4" required id="user"
+													disabled="disabled">
+											</div>
 
-												<div class="input-group mb-3">
-													<span class="input-group-text" id="basic-addon4">Username</span>
-													<input type="text" class="form-control"
-														aria-describedby="basic-addon4" required id="user"
-														disabled="disabled">
-												</div>
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="basic-addon5">Password</span>
+												<input type="text" class="form-control"
+													aria-describedby="basic-addon5" required id="password"
+													disabled="disabled">
+											</div>
+										</form>
 
-												<div class="input-group mb-3">
-													<span class="input-group-text" id="basic-addon5">Password</span>
-													<input type="text" class="form-control"
-														aria-describedby="basic-addon5" required id="password"
-														disabled="disabled">
-												</div>
-											</form>
+										<button type="button" class="btn btn-primary"
+											onclick="enviar()">
+											<i class="fas fa-search"></i> Buscar usuario
+										</button>
 
-											<button type="button" class="btn btn-primary"
-												onclick="enviar()">
-												<i class="fas fa-search"></i> Buscar usuario
-											</button>
-
-										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</main>
+			</div>
+		</main>
 
-			<div w3-include-html="/snippets/footer.html"></div>
-		</div>
+		<div w3-include-html="snippets/footer.html"></div>
+	</div>
 	</div>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	
+
 	<script>
 		includeHTML();
 	</script>
@@ -202,8 +202,7 @@
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			var user = document.getElementById("usersearch").value;
-			req.open('GET', 'http://localhost:8080/consultarusuario?usuario='
-					+ user, false);
+			req.open('GET','http://localhost:8080/consultarusuario?usuario='+ user, false);
 			req.send(null);
 			var usuario = null;
 			if (req.status == 200)

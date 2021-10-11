@@ -40,120 +40,76 @@
 
 		</form>
 	</nav>
-	
-	<div w3-include-html="/snippets/sidenav.html"></div>
 
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4 animate__animated animate__bounceInLeft">
-					<h1 class="mt-4">Insertar archivo de productos</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">Permite cargar un archivo CSV con los productos que tiene la tienda</li>
-					</ol>
-					<div class="row">
-					<div class="col-xl-12 col-md-12">
-						<div class="card  text-black mb-4">
+	<div w3-include-html="snippets/sidenav.html"></div>
 
-							<div class="container">
+	<div id="layoutSidenav_content">
+		<main>
+			<div
+				class="container-fluid px-4 animate__animated animate__bounceInLeft">
+				<h1 class="mt-4">Insertar archivo de productos</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item active">Permite cargar un archivo
+						CSV con los productos que tiene la tienda</li>
+				</ol>
 
-								<h1>
-									<i class="fas fa-cogs"></i> Operaciones
-								</h1>
-								<div class="row">
-									<div class="col-sm-2 col-md-2 me-2">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card mb-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-table"></i> Carga de archivo de productos
+							</div>
+							<div class="card-body">
+								<div class="container">
 
-										<button type="button" class="btn btn-success"
-											onclick="window.location.href='/insertarusuario.jsp'">
-											<i class="fas fa-plus-circle"></i> Agregar usuario
-										</button>
+									<h1>
+										<i class="fas fa-plus-circle"></i> Insertando archivo de
+										productos
+									</h1>
+									<div class="container">
+
+
+										<div id="error" class="alert alert-danger visually-hidden"
+											role="alert">Archivo vacio, extensión no valida o datos
+											corruptos (El separador debe ser coma ",")</div>
+
+										<div id="correcto" class="alert alert-success visually-hidden"
+											role="alert">Productos importados desde CSV con exito</div>
+
+										<form id="form1">
+											<div>
+												<label for="formFileLg" class="form-label">Seleccionar
+													archivo CSV con el inventario de productos</label> <input
+													class="form-control form-control-lg" id="archivo"
+													type="file" accept=".csv">
+												<button type="button" class="btn btn-success"
+													onclick="subirArchivo()">Subir archivo</button>
+											</div>
+
+										</form>
+
 									</div>
-									<div class="col-sm-2 col-md-2 me-2">
-										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='/eliminarusuario.jsp'">
-											<i class="fas fa-trash"></i> Eliminar usuario
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-4">
-										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='/actualizarusuario.jsp'">
-											<i class="fas fa-pen-alt"></i> Actualizar usuario
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-2">
-										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar usuario
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-2">
-										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='/listausuarios.jsp'">
-											<i class="fas fa-search"></i> Listado completo
-										</button>
-									</div>
+
+
+
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</main>
 
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="card mb-4">
-								<div class="card-header text-white bg-dark">
-									<i class="fas fa-table"></i> Carga de archivo de productos
-								</div>
-								<div class="card-body">
-									<div class="container">
+		<div w3-include-html="snippets/footer.html"></div>
 
-										<h1>
-											<i class="fas fa-plus-circle"></i> Insertando archivo de
-											productos
-										</h1>
-										<div class="container">
-
-
-											<div id="error" class="alert alert-danger visually-hidden"
-												role="alert">Archivo vacio, extensión no valida o
-												datos corruptos (El separador debe ser coma ",")</div>
-
-											<div id="correcto"
-												class="alert alert-success visually-hidden" role="alert">Productos
-												importados desde CSV con exito</div>
-
-											<form id="form1">
-												<div>
-													<label for="formFileLg" class="form-label">Seleccionar
-														archivo CSV con el inventario de productos</label> <input
-														class="form-control form-control-lg" id="archivo"
-														type="file" accept=".csv">
-													<button type="button" class="btn btn-success"
-														onclick="subirArchivo()">Subir archivo</button>
-												</div>
-
-											</form>
-
-										</div>
-
-
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			</main>
-
-			<div w3-include-html="/snippets/footer.html"></div>
-			
-		</div>
 	</div>
+
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	
+
 	<script>
 		includeHTML();
 	</script>
@@ -177,8 +133,8 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",
-							"http://localhost:8080/eliminartodoproducto", true);
+					xhr.open("DELETE","http://localhost:8080/eliminartodoproducto",
+									true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
@@ -200,8 +156,7 @@
 						formData.append("iva_compra", arraydatos[4]);
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
-						xhr.open("POST",
-								"http://localhost:8080/registrarproducto");
+						xhr.open("POST","http://localhost:8080/registrarproducto");
 
 						xhr.send(formData);
 					}
