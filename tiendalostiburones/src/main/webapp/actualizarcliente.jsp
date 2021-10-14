@@ -10,7 +10,7 @@
 <meta name="description"
 	content="Proyecto de entrenamiento en desarrollo web" />
 <meta name="author" content="Ing. Diego Rodriguez" />
-<title>Eliminar Usuario</title>
+<title>Actualizar cliente</title>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -41,16 +41,18 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
+
+			<div w3-include-html="snippets/sidenav.html"></div>
+
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
-				<h1 class="mt-4">Eliminar usuario</h1>
+				<h1 class="mt-4">Actualizar cliente</h1>
 				<ol class="breadcrumb mb-4">
-					<li class="breadcrumb-item active">Permite eliminar un usuario
-						existente</li>
+					<li class="breadcrumb-item active">Permite modificar los datos
+						de un cliente especifico</li>
 				</ol>
 				<div class="row">
 					<div class="col-xl-12 col-md-12">
@@ -65,31 +67,31 @@
 									<div class="col-sm-2 col-md-2 me-2">
 
 										<button type="button" class="btn btn-success"
-											onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
-											<i class="fas fa-plus-circle"></i> Agregar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/insertarcliente.jsp'">
+											<i class="fas fa-plus-circle"></i> Agregar cliente
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
-											<i class="fas fa-trash"></i> Eliminar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/eliminarcliente.jsp'">
+											<i class="fas fa-trash"></i> Eliminar cliente
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
-											<i class="fas fa-pen-alt"></i> Actualizar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/actualizarcliente.jsp'">
+											<i class="fas fa-pen-alt"></i> Actualizar cliente
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/buscarcliente.jsp'">
+											<i class="fas fa-search"></i> Buscar un cliente
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/listaclientes.jsp'">
 											<i class="fas fa-search"></i> Listado completo
 										</button>
 									</div>
@@ -103,36 +105,64 @@
 					<div class="col-xl-12">
 						<div class="card mb-4">
 							<div class="card-header text-white bg-dark">
-								<i class="fas fa-table"></i> Formulario de registro de usuario
+								<i class="fas fa-table"></i> Modificar datos de un cliente
+
 							</div>
+
 							<div class="card-body">
 
 								<h1>
-									<i class="fas fa-skull-crossbones"></i> Datos del usuario a
-									eliminar
+									<i class="fas fa-sync"></i> Datos a actualizar del cliente
 								</h1>
 								<div class="container">
 
 
 									<div id="error" class="alert alert-danger visually-hidden"
-										role="alert">Error al eliminar el usuario, verifique que
-										exista un usuario con la cedula y usuario dados</div>
-
+										role="alert">Error al actualizar el cliente, verifique <
+										que la cedula sea valida</div>
 									<div id="correcto" class="alert alert-success visually-hidden"
-										role="alert">Usuario eliminado con exito</div>
-
+										role="alert">Cliente actualizado con exito</div>
 									<form id="form1">
 										<div class="input-group mb-3">
 											<span class="input-group-text" id="basic-addon1">Cedula</span>
 											<input type="text" class="form-control"
 												placeholder="Inserte cedula aqui..."
-												aria-describedby="basic-addon1" required id="cedula_usuario">
+												aria-describedby="basic-addon1" required id="cedula_cliente">
+										</div>
+
+										<div class="input-group mb-3">
+											<span class="input-group-text" id="basic-addon2">Dirección</span>
+											<input type="text" class="form-control"
+												placeholder="Inserte dirección aqui..."
+												aria-describedby="basic-addon2" required
+												id="direccion_cliente">
+										</div>
+
+										<div class="input-group mb-3">
+											<span class="input-group-text" id="basic-addon3">Email</span>
+											<input type="text" class="form-control"
+												placeholder="Inserte email aqui..."
+												aria-describedby="basic-addon3" required id="email_cliente">
+										</div>
+
+										<div class="input-group mb-3">
+											<span class="input-group-text" id="basic-addon4">Nombre
+												completo</span> <input type="text" class="form-control"
+												placeholder="Inserte nombre aqui..."
+												aria-describedby="basic-addon4" required id="nombre_cliente">
+										</div>
+
+										<div class="input-group mb-3">
+											<span class="input-group-text" id="basic-addon5">Telefono</span>
+											<input type="text" class="form-control"
+												placeholder="Inserte telefono aqui..."
+												aria-describedby="basic-addon5" required
+												id="telefono_cliente">
 										</div>
 									</form>
-
-									<button type="button" class="btn btn-danger"
-										onclick="eliminar()">
-										<i class="fas fa-skull-crossbones"></i> Eliminar usuario
+									<button type="button" class="btn btn-warning"
+										onclick="actualizar()">
+										<i class="fas fa-edit"></i> Actualizar cliente
 									</button>
 								</div>
 							</div>
@@ -144,70 +174,90 @@
 
 		<div w3-include-html="snippets/footer.html"></div>
 
-	</div>
 
+	</div>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
+
 	<script>
 		includeHTML();
 	</script>
 
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 		crossorigin="anonymous"></script>
+
 	<script>
-		function eliminar() {
-			var y = document.getElementById("cedula_usuario").value;
+		function actualizar() {
+			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarusuarios', false);
+			req.open('GET', 'http://localhost:8080/listarclientes', false);
 			req.send(null);
-			var usuarios = null;
+			var clientes = null;
 			if (req.status == 200)
-				usuarios = JSON.parse(req.responseText);
+				clientes = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
 
-			for (i = 0; i < usuarios.length; i++) {
+			for (i = 0; i < clientes.length; i++) {
+				console.log(clientes[i].cedula_cliente);
 
-				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].cedula_usuario == y) {
-					console.log(usuarios[i].cedula_usuario + " " + y);
-					coincidencia = true;
+				if (clientes[i].cedula_cliente == y) {
+					console.log(clientes[i].cedula_cliente + " " + y);
+					coincidencia = true
 					break;
 				}
 			}
 			console.log(coincidencia);
 
 			if (coincidencia != false) {
-				var cedula = document.getElementById("cedula_usuario").value;
-
+				var formData = new FormData();
+				formData.append("cedula_cliente", document.getElementById("cedula_cliente").value);
+				formData.append("direccion_cliente", document.getElementById("direccion_cliente").value);
+				formData.append("email_cliente", document.getElementById("email_cliente").value);
+				formData.append("nombre_cliente",document.getElementById("nombre_cliente").value);
+				formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE",
-						"http://localhost:8080/eliminarusuario?cedula_usuario="
-								+ cedula);
+				xhr.open("PUT", "http://localhost:8080/actualizarcliente");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
-
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 
-				document.getElementById("cedula_usuario").value = "";
-				xhr.send();
+				document.getElementById("cedula_cliente").value = "";
+				document.getElementById("direccion_cliente").value = "";
+				document.getElementById("email_cliente").value = "";
+				document.getElementById("nombre_cliente").value = "";
+				document.getElementById("telefono_cliente").value = "";
+				xhr.send(formData);
 
 			} else {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
-
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-
-				document.getElementById("cedula_usuario").value = "";
-				;
+				document.getElementById("cedula_cliente").value = "";
+				document.getElementById("direccion_cliente").value = "";
+				document.getElementById("email_cliente").value = "";
+				document.getElementById("nombre_cliente").value = "";
+				document.getElementById("telefono_cliente").value = "";
 			}
 		}
 	</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

@@ -30,7 +30,9 @@ function includeHTML() {
 		
 		if (file) {
 			//alert(window.location.href+file);
-			file =window.location.href+file;
+			
+			//file =window.location.href+file;
+			
 			/* Make an HTTP request using the attribute value as the file name: */
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {

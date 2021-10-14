@@ -57,7 +57,7 @@ public class ClienteDAO {
 		try {
 			//prepare la sentencia en la base de datos
 			PreparedStatement consulta = conex.getConnection()
-					.prepareStatement("SELECT * FROM cliente where cedula_cliente = ? ");		
+					.prepareStatement("SELECT * FROM clientes where cedula_cliente = ? ");		
 			// se cambia el comodin ? por el dato que ha llegado en el parametro de la funcion
 			consulta.setInt(1, client);			
 			//ejecute la sentencia

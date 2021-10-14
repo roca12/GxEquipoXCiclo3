@@ -10,7 +10,7 @@
 <meta name="description"
 	content="Proyecto de entrenamiento en desarrollo web" />
 <meta name="author" content="Ing. Diego Rodriguez" />
-<title>Buscar Usuario</title>
+<title>Buscar proveedor</title>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -41,16 +41,17 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
+
+			<div w3-include-html="snippets/sidenav.html"></div>
+
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
-				<h1 class="mt-4">Eliminar usuario</h1>
+				<h1 class="mt-4">Buscar proveedor</h1>
 				<ol class="breadcrumb mb-4">
-					<li class="breadcrumb-item active">Permite eliminar un usuario
-						existente</li>
+					<li class="breadcrumb-item active"> Permite buscar un proveedor por su NIT</li>
 				</ol>
 				<div class="row">
 					<div class="col-xl-12 col-md-12">
@@ -65,31 +66,31 @@
 									<div class="col-sm-2 col-md-2 me-2">
 
 										<button type="button" class="btn btn-success"
-											onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
-											<i class="fas fa-plus-circle"></i> Agregar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+											<i class="fas fa-plus-circle"></i> Agregar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
-											<i class="fas fa-trash"></i> Eliminar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+											<i class="fas fa-trash"></i> Eliminar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
-											<i class="fas fa-pen-alt"></i> Actualizar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+											<i class="fas fa-pen-alt"></i> Actualizar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+											<i class="fas fa-search"></i> Buscar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
 											<i class="fas fa-search"></i> Listado completo
 										</button>
 									</div>
@@ -103,12 +104,12 @@
 					<div class="col-xl-12">
 						<div class="card mb-4">
 							<div class="card-header text-white bg-dark">
-								<i class="fas fa-table"></i> Formulario de registro de usuario
+								<i class="fas fa-table"></i> Busqueda de proveedor
 							</div>
 							<div class="card-body">
 
 								<h1>
-									<i class="fas fa-search m-1"></i>Username del usuario a buscar
+									<i class="fas fa-search m-1"></i>NIT del proveedor a buscar
 								</h1>
 								<div class="container">
 
@@ -116,60 +117,60 @@
 
 
 										<div id="error" class="alert alert-danger visually-hidden"
-											role="alert">Error al buscar el usuario, el usuario no
+											role="alert">Error al buscar el proveedor, el proveedor no
 											existe</div>
 
 										<div id="correcto" class="alert alert-success visually-hidden"
-											role="alert">Usuario encontrado con exito</div>
+											role="alert">Proveedor encontrado con exito</div>
 
 										<form id="form1">
 
 											<div class="input-group mb-3">
-												<span class="input-group-text" id="basic-addon4">Usuario
+												<span class="input-group-text" id="basic-addon4">Proveedor a buscar
 													a buscar</span> <input type="text" class="form-control"
-													placeholder="Inserte username aqui..."
-													aria-describedby="basic-addon4" required id="usersearch">
+													placeholder="Inserte NIT aqui..."
+													aria-describedby="basic-addon4" required id="providersearch">
 											</div>
 											<br> <br> <br>
 											<div class="input-group mb-3">
-												<span class="input-group-text" id="basic-addon1">Cedula</span>
+												<span class="input-group-text" id="basic-addon1">NIT</span>
 												<input type="text" class="form-control"
 													aria-describedby="basic-addon1" required
-													id="cedula_usuario" disabled="disabled">
+													id="nit_proveedor" disabled="disabled">
 											</div>
 
 											<div class="input-group mb-3">
-												<span class="input-group-text" id="basic-addon2">Email</span>
+												<span class="input-group-text" id="basic-addon2">Ciudad</span>
 												<input type="text" class="form-control"
-													aria-describedby="basic-addon2" required id="email_usuario"
+													aria-describedby="basic-addon2" required id="ciudad_proveedor"
 													disabled="disabled">
 											</div>
 
 											<div class="input-group mb-3">
-												<span class="input-group-text" id="basic-addon3">Nombrecompleto</span>
+												<span class="input-group-text" id="basic-addon3">Dirección</span>
 												<input type="text" class="form-control"
 													aria-describedby="basic-addon3" required
-													id="nombre_usuario" disabled="disabled">
+													id="direccion_proveedor" disabled="disabled">
 											</div>
 
 											<div class="input-group mb-3">
-												<span class="input-group-text" id="basic-addon4">Username</span>
+												<span class="input-group-text" id="basic-addon4">Nombre</span>
 												<input type="text" class="form-control"
-													aria-describedby="basic-addon4" required id="user"
+													aria-describedby="basic-addon4" required id="nombre_proveedor"
 													disabled="disabled">
 											</div>
 
 											<div class="input-group mb-3">
-												<span class="input-group-text" id="basic-addon5">Password</span>
+												<span class="input-group-text" id="basic-addon5">Telefono</span>
 												<input type="text" class="form-control"
-													aria-describedby="basic-addon5" required id="password"
+													aria-describedby="basic-addon5" required id="telefono_proveedor"
 													disabled="disabled">
 											</div>
 										</form>
 
 										<button type="button" class="btn btn-primary"
 											onclick="enviar()">
-											<i class="fas fa-search"></i> Buscar usuario
+											<i class="fas fa-search"></i> Buscar proveedor
 										</button>
 
 									</div>
@@ -182,7 +183,8 @@
 		</main>
 
 		<div w3-include-html="snippets/footer.html"></div>
-	</div>
+
+
 	</div>
 
 	<script
@@ -198,15 +200,20 @@
 		crossorigin="anonymous"></script>
 	<script>
 		function enviar() {
+			
+			
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			
 
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			var user = document.getElementById("usersearch").value;
-			req.open('GET','http://localhost:8080/consultarusuario?usuario='+ user, false);
+			var provider = document.getElementById("providersearch").value;
+			req.open('GET',baseUrl+'/consultarproveedor?nit='+ provider, false);
 			req.send(null);
-			var usuario = null;
+			var proveedor = null;
 			if (req.status == 200)
-				usuario = JSON.parse(req.responseText);
+				proveedor = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
 
 			var element = document.getElementById("error");
@@ -214,30 +221,41 @@
 			var element2 = document.getElementById("correcto");
 			element2.classList.remove("visually-hidden");
 
-			console.log(usuario.toString());
+			console.log(proveedor.toString());
 
-			if (usuario.toString() != "") {
+			if (proveedor.toString() != "") {
 
-				document.getElementById("cedula_usuario").value = usuario[0].cedula_usuario;
-				document.getElementById("email_usuario").value = usuario[0].email_usuario;
-				document.getElementById("nombre_usuario").value = usuario[0].nombre_usuario;
-				document.getElementById("password").value = usuario[0].password;
-				document.getElementById("user").value = usuario[0].usuario;
+				document.getElementById("nit_proveedor").value = proveedor[0].nit_proveedor;
+				document.getElementById("ciudad_proveedor").value = proveedor[0].ciudad_proveedor;
+				document.getElementById("direccion_proveedor").value = proveedor[0].direccion_proveedor;
+				document.getElementById("nombre_proveedor").value = proveedor[0].nombre_proveedor;
+				document.getElementById("telefono_proveedor").value = proveedor[0].telefono_proveedor;
 
-				document.getElementById("usersearch").value = "";
+				document.getElementById("providersearch").value = "";
 
 			} else {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
 			}
 		}
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

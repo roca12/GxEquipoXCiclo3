@@ -10,7 +10,7 @@
 <meta name="description"
 	content="Proyecto de entrenamiento en desarrollo web" />
 <meta name="author" content="Ing. Diego Rodriguez" />
-<title>Actualizar Usuario</title>
+<title>Actualizar proveedor</title>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -49,10 +49,10 @@
 
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
-				<h1 class="mt-4">Lista de usuarios</h1>
+				<h1 class="mt-4">Actualizar proveedor</h1>
 				<ol class="breadcrumb mb-4">
-					<li class="breadcrumb-item active">Permite registrar un nuevo
-						usuario en el sistema</li>
+					<li class="breadcrumb-item active">Permite modificar los datos
+						de un proveedor dado su NIT</li>
 				</ol>
 				<div class="row">
 					<div class="col-xl-12 col-md-12">
@@ -67,31 +67,31 @@
 									<div class="col-sm-2 col-md-2 me-2">
 
 										<button type="button" class="btn btn-success"
-											onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
-											<i class="fas fa-plus-circle"></i> Agregar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+											<i class="fas fa-plus-circle"></i> Agregar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
-											<i class="fas fa-trash"></i> Eliminar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+											<i class="fas fa-trash"></i> Eliminar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
-											<i class="fas fa-pen-alt"></i> Actualizar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+											<i class="fas fa-pen-alt"></i> Actualizar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+											<i class="fas fa-search"></i> Buscar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
 											<i class="fas fa-search"></i> Listado completo
 										</button>
 									</div>
@@ -105,60 +105,64 @@
 					<div class="col-xl-12">
 						<div class="card mb-4">
 							<div class="card-header text-white bg-dark">
-								<i class="fas fa-table"></i> Formulario de registro de usuario
+								<i class="fas fa-table"></i> Modificar datos de un proveedor
 							</div>
 							<div class="card-body">
 
 								<h1>
-									<i class="fas fa-sync"></i> Datos a actualizar del usuario
+									<i class="fas fa-sync"></i> Datos a actualizar del proveedor
 								</h1>
 								<div class="container">
 
 
 									<div id="error" class="alert alert-danger visually-hidden"
-										role="alert">Error al actualizar el usuario, verifique <
-										que la cedula y usuario dados sean validos</div>
+										role="alert">Error al actualizar el proveedor, verifique
+										< que el NIT sea valido</div>
 									<div id="correcto" class="alert alert-success visually-hidden"
-										role="alert">Usuario actualizado con exito</div>
+										role="alert">Proveedor actualizado con exito</div>
 									<form id="form1">
 										<div class="input-group mb-3">
-											<span class="input-group-text" id="basic-addon1">Cedula</span>
-											<input type="text" class="form-control"
-												placeholder="Inserte cedula aqui..."
-												aria-describedby="basic-addon1" required id="cedula_usuario">
+											<span class="input-group-text" id="basic-addon1">NIT</span> <input
+												type="text" class="form-control"
+												placeholder="Inserte NIT aqui..."
+												aria-describedby="basic-addon1" required id="nit_proveedor">
 										</div>
 
 										<div class="input-group mb-3">
-											<span class="input-group-text" id="basic-addon2">Email</span>
+											<span class="input-group-text" id="basic-addon2">Ciudad</span>
 											<input type="text" class="form-control"
-												placeholder="Inserte email aqui..."
-												aria-describedby="basic-addon2" required id="email_usuario">
+												placeholder="Inserte ciudad aqui..."
+												aria-describedby="basic-addon2" required
+												id="ciudad_proveedor">
 										</div>
 
 										<div class="input-group mb-3">
-											<span class="input-group-text" id="basic-addon3">Nombre completo</span>
+											<span class="input-group-text" id="basic-addon3">Dirección</span>
 											<input type="text" class="form-control"
+												placeholder="Inserte Dirección aqui..."
+												aria-describedby="basic-addon3" required
+												id="direccion_proveedor">
+										</div>
+
+										<div class="input-group mb-3">
+											<span class="input-group-text" id="basic-addon4">Nombre
+											</span> <input type="text" class="form-control"
 												placeholder="Inserte nombre aqui..."
-												aria-describedby="basic-addon3" required id="nombre_usuario">
+												aria-describedby="basic-addon4" required
+												id="nombre_proveedor">
 										</div>
 
 										<div class="input-group mb-3">
-											<span class="input-group-text" id="basic-addon4">Username</span>
+											<span class="input-group-text" id="basic-addon5">Telefono</span>
 											<input type="text" class="form-control"
-												placeholder="Inserte username aqui..."
-												aria-describedby="basic-addon4" required id="user">
-										</div>
-
-										<div class="input-group mb-3">
-											<span class="input-group-text" id="basic-addon5">Password</span>
-											<input type="text" class="form-control"
-												placeholder="Inserte password aqui..."
-												aria-describedby="basic-addon5" required id="password">
+												placeholder="Inserte telefono aqui..."
+												aria-describedby="basic-addon5" required
+												id="telefono_proveedor">
 										</div>
 									</form>
 									<button type="button" class="btn btn-warning"
 										onclick="actualizar()">
-										<i class="fas fa-edit"></i> Actualizar usuario
+										<i class="fas fa-edit"></i> Actualizar proveedor
 									</button>
 								</div>
 							</div>
@@ -184,30 +188,24 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 		crossorigin="anonymous"></script>
+
+
 	<script>
 		function actualizar() {
-			var x = document.getElementById("user").value;
-			var y = document.getElementById("cedula_usuario").value;
+			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarusuarios', false);
+			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
-			var usuarios = null;
+			var proveedores = null;
 			if (req.status == 200)
-				usuarios = JSON.parse(req.responseText);
+				proveedores = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
 
-			for (i = 0; i < usuarios.length; i++) {
-				console.log(usuarios[i].usuario);
-				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario === x) {
-					console.log(usuarios[i].usuario + " " + x);
-					coincidencia = true
-					break;
-				}
+			for (i = 0; i < proveedores.length; i++) {
 
-				if (usuarios[i].cedula_usuario === y) {
-					console.log(usuarios[i].cedula_usuario + " " + y);
+				if (proveedores[i].nit_proveedor == y) {
+					console.log(proveedores[i].nit_proveedor + " " + y);
 					coincidencia = true
 					break;
 				}
@@ -216,29 +214,24 @@
 
 			if (coincidencia != false) {
 				var formData = new FormData();
-				formData.append("cedula_usuario", document
-						.getElementById("cedula_usuario").value);
-				formData.append("email_usuario", document
-						.getElementById("email_usuario").value);
-				formData.append("nombre_usuario", document
-						.getElementById("nombre_usuario").value);
-				formData.append("password",
-						document.getElementById("password").value);
-				formData.append("usuario",
-						document.getElementById("user").value);
+				formData.append("nit_proveedor", document.getElementById("nit_proveedor").value);
+				formData.append("ciudad_proveedor", document.getElementById("ciudad_proveedor").value);
+				formData.append("direccion_proveedor", document.getElementById("direccion_proveedor").value);
+				formData.append("nombre_proveedor", document.getElementById("nombre_proveedor").value);
+				formData.append("telefono_proveedor", document.getElementById("telefono_proveedor").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarusuarios");
+				xhr.open("PUT", "http://localhost:8080/actualizarproveedor");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
 				xhr.send(formData);
 
 			} else {
@@ -246,14 +239,16 @@
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
 			}
 		}
 	</script>
+
+
 </body>
 </html>
 

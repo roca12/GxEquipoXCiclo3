@@ -10,19 +10,26 @@
 <meta name="description"
 	content="Proyecto de entrenamiento en desarrollo web" />
 <meta name="author" content="Ing. Diego Rodriguez" />
-<title>Lista de usuarios</title>
+<title>Lista de proveedores</title>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 <script>
 	
 	window.addEventListener('DOMContentLoaded', event => {
 	    // Simple-DataTables
 	    // https://github.com/fiduswriter/Simple-DataTables/wiki
 		let table=null;
-	    if (datatablesuers) {
-	        table=new simpleDatatables.DataTable("#datatablesuers", {
+	    if (datatablesproveedores) {
+	        table=new simpleDatatables.DataTable("#datatablesproveedores", {
 	            searchable: true,
 	            labels: {
 	                placeholder: "Buscar...",
@@ -33,7 +40,7 @@
 	        });
 	    }
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET", "http://localhost:8080/listarusuarios", true);
+			xmlhttp.open("GET", "http://localhost:8080/listarproveedores", true);
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
@@ -41,11 +48,11 @@
 					
 					for (i = 0; i < usuarios.length; i++) {
 						let fila = [
-							usuarios[i].cedula_usuario.toString(), 
-							usuarios[i].email_usuario, 
-							usuarios[i].nombre_usuario, 
-							usuarios[i].password, 
-							usuarios[i].usuario
+							usuarios[i].nit_proveedor.toString(), 
+							usuarios[i].ciudad_proveedor, 
+							usuarios[i].direccion_proveedor, 
+							usuarios[i].nombre_proveedor, 
+							usuarios[i].telefono_proveedor
 						];
 
 					    table.rows().add(fila);
@@ -56,15 +63,8 @@
 			xmlhttp.send();
 	});
 </script>
-
-<link
-	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
-	rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
 </head>
+
 <body class="sb-nav-fixed sb-sidenav-toggled">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
@@ -82,16 +82,17 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
+
+			<div w3-include-html="snippets/sidenav.html"></div>
+
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
-				<h1 class="mt-4">Lista de usuarios</h1>
+				<h1 class="mt-4">Lista de proveedores</h1>
 				<ol class="breadcrumb mb-4">
-					<li class="breadcrumb-item active">Muestra una tabla
-						conteniendo todos los usuarios registrados en el sistema</li>
+					<li class="breadcrumb-item active"> Muestra la lista de los proveedores registrados</li>
 				</ol>
 				<div class="row">
 					<div class="col-xl-12 col-md-12">
@@ -106,31 +107,31 @@
 									<div class="col-sm-2 col-md-2 me-2">
 
 										<button type="button" class="btn btn-success"
-											onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
-											<i class="fas fa-plus-circle"></i> Agregar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+											<i class="fas fa-plus-circle"></i> Agregar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
-											<i class="fas fa-trash"></i> Eliminar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+											<i class="fas fa-trash"></i> Eliminar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
-											<i class="fas fa-pen-alt"></i> Actualizar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+											<i class="fas fa-pen-alt"></i> Actualizar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
-											<i class="fas fa-search"></i> Buscar usuario
+											onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+											<i class="fas fa-search"></i> Buscar proveedor
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
 											<i class="fas fa-search"></i> Listado completo
 										</button>
 									</div>
@@ -144,43 +145,43 @@
 					<div class="col-xl-12">
 						<div class="card mb-4">
 							<div class="card-header text-white bg-dark">
-								<i class="fas fa-table"></i> Tabla de usuarios
+								<i class="fas fa-table"></i> Listado de proveedores
 							</div>
 							<div class="card-body">
-								<table id="datatablesuers">
+								<table id="datatablesproveedores">
 									<thead>
 										<tr>
-											<th>Cedula</th>
-											<th>Email</th>
+											<th>NIT</th>
+											<th>Ciudad</th>
+											<th>Dirección</th>
 											<th>Nombre</th>
-											<th>Password</th>
-											<th>Usuario</th>
+											<th>Telefono</th>
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
-											<th>Cedula</th>
-											<th>Email</th>
+											<th>NIT</th>
+											<th>Ciudad</th>
+											<th>Dirección</th>
 											<th>Nombre</th>
-											<th>Password</th>
-											<th>Usuario</th>
+											<th>Telefono</th>
 										</tr>
 									</tfoot>
-									<tbody id="usuariosinfo">
+									<tbody id="proveedoresinfo">
 
 									</tbody>
 								</table>
+							
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</main>
 
 		<div w3-include-html="snippets/footer.html"></div>
 
-	</div>
+
 	</div>
 
 	<script
@@ -194,5 +195,17 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 		crossorigin="anonymous"></script>
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
