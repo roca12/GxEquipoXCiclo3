@@ -46,5 +46,5 @@ Administrado por Diego Rodriguez
 
 
 ## Contribuyentes
-[![roca12 github stats](https://github-readme-stats.vercel.app/api?username=roca12&show_icons=true&hide=stars,issues&theme=dark)](https://github.com/roca12/GxEquipoXCiclo3)
+[![roca12 github stats](https://github-readme-stats.vercel.app/api?username=roca12&show_icons=true&hide=stars,issues&theme=highcontrast)](https://github.com/roca12/GxEquipoXCiclo3)
 
