@@ -91,6 +91,7 @@ public class DetalleVentaDAO {
 			System.out.println("No se pudo consultar todas las detalle_ventas");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
+			e.printStackTrace();
 		}
 
 		return listadetalle_ventas;
