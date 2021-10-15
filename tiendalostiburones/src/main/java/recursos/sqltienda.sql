@@ -98,6 +98,14 @@ FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto)
 ALTER TABLE detalle_ventas
 ADD FOREIGN KEY (codigo_venta) REFERENCES ventas(codigo_venta);
 
-select count(*) from usuarios;
+############# revisar estado de la bd 
+select id, user, host, db, command, time, state, info, progress
+from information_schema.processlist;
+
+####### obteniendo el siguiente consecutivo en ventas
+SELECT `AUTO_INCREMENT`
+FROM  INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'tiendalostiburones'
+AND   TABLE_NAME   = 'ventas';
 
 
