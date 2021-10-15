@@ -34,7 +34,8 @@
 
 
 # Medidor de lenguajes
-[![Uso de lenguajes de programación](https://github-readme-stats.vercel.app/api/top-langs/?username=roca12)](https://github.com/roca12/GxEquipoXCiclo3)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=roca12&layout=compact)](https://github.com/roca12/GxEquipoXCiclo3)
+
 
 # Acerca del propietario
 Administrado por Diego Rodriguez
@@ -45,5 +46,5 @@ Administrado por Diego Rodriguez
 
 
 ## Contribuyentes
-[![roca12 github stats](https://github-readme-stats.vercel.app/api?username=roca12&show_icons=true&hide=stars,issues&theme=darcula)](https://github.com/roca12/GxEquipoXCiclo3)
+[![roca12 github stats](https://github-readme-stats.vercel.app/api?username=roca12&show_icons=true&hide=stars,issues&theme=dark)](https://github.com/roca12/GxEquipoXCiclo3)
 
