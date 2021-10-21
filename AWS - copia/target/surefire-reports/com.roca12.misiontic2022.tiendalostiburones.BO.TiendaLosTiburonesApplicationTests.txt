@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.roca12.misiontic2022.tiendalostiburones.BO.TiendaLosTiburonesApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.346 s - in com.roca12.misiontic2022.tiendalostiburones.BO.TiendaLosTiburonesApplicationTests
